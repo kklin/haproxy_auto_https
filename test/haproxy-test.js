@@ -42,12 +42,12 @@ frontend http-in
 backend domainA
     balance roundrobin
     cookie SERVERID insert indirect nocache
-    server foo.q foo.q:80 check resolvers dns cookie foo.q
+    server foo foo:80 check resolvers dns cookie foo
 
 backend domainB
     balance roundrobin
     cookie SERVERID insert indirect nocache
-    server bar.q bar.q:80 check resolvers dns cookie bar.q
+    server bar bar:80 check resolvers dns cookie bar
 `;
 
       const domainA = [new kelda.Container('foo', 'image')];
